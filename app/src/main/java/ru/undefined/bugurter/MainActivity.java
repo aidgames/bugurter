@@ -37,10 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        
+        EditText edittext = (EditText)findViewById(R.id.bugurt_plain);
         if (item.getItemId()==MenuItem_COPYBUGURT) {
             ClipboardManager cbman = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-            EditText edittext = (EditText)findViewById(R.id.bugurt_plain);
             cbman.setPrimaryClip(ClipData.newPlainText("Bugurt",
                 BugurtHelper.toBugurt(edittext.getText().toString())
             ));
@@ -48,14 +47,12 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Скопировано!", 0);
             toast.show();
         } else if (item.getItemId()==MenuItem_CONVERTBUGURT) {
-            EditText edittext = (EditText)findViewById(R.id.bugurt_plain);
             edittext.setText(
                 BugurtHelper.toBugurt(    
                     edittext.getText().toString()
                 )
             );
         } else if (item.getItemId()==MenuItem_CONVERTTEXT) {
-            EditText edittext = (EditText)findViewById(R.id.bugurt_plain);
             edittext.setText(
                 BugurtHelper.toText(    
                     edittext.getText().toString()
