@@ -9,6 +9,6 @@ public class BugurtHelper {
     public static String toText(String bugurt){
         return bugurt
             .toLowerCase()
-            .replaceAll("\n@\n", "\n");
+            .replaceAll("\n@", "");
     }
 }
