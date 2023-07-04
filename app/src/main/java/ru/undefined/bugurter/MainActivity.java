@@ -3,7 +3,6 @@ package ru.undefined.bugurter;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MenuInflater;
 import android.content.ClipboardManager;
 import android.content.ClipData;
 import android.widget.Toast;
@@ -26,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.mainmenu, menu);
+        getMenuInflater()
+            .inflate(R.menu.mainmenu, menu);
         return true;
     }
 
