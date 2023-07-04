@@ -19,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
     private static final int MenuItem_COPYBUGURT = ++menulast;
     private static final int MenuItem_CONVERTBUGURT = ++menulast;
     private static final int MenuItem_CONVERTTEXT = ++menulast;
+    private EditText edittext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        edittext = (EditText)findViewById(R.id.bugurt_plain);
     }
 
     @Override
@@ -37,13 +39,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        EditText edittext = (EditText)findViewById(R.id.bugurt_plain);
         if (item.getItemId()==MenuItem_COPYBUGURT) {
             ClipboardManager cbman = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
             cbman.setPrimaryClip(ClipData.newPlainText("Bugurt",
                 BugurtHelper.toBugurt(edittext.getText().toString())
             ));
-
             Toast toast = Toast.makeText(this, "Скопировано!", 0);
             toast.show();
         } else if (item.getItemId()==MenuItem_CONVERTBUGURT) {
