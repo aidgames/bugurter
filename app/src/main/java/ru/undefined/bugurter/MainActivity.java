@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        menu.add(Menu.NONE, MenuItem_COPYBUGURT, Menu.NONE, "Скопировать в формате бугурта");
-        menu.add(Menu.NONE, MenuItem_CONVERTBUGURT, Menu.NONE, "Конвертировать текст в бугурт");
-        menu.add(Menu.NONE, MenuItem_CONVERTTEXT, Menu.NONE, "Конвертировать бугурт в текст");
+        menu.add(Menu.NONE, MenuItem_COPYBUGURT, Menu.NONE, getString(R.string.menu_copy_bugurt));
+        menu.add(Menu.NONE, MenuItem_CONVERTBUGURT, Menu.NONE, getString(R.string.menu_convert_bugurt));
+        menu.add(Menu.NONE, MenuItem_CONVERTTEXT, Menu.NONE, getString(R.string.menu_convert_text));
         return true;
     }
 
@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item)
     {
         if (item.getItemId()==MenuItem_COPYBUGURT) {
-            ClipboardManager cbman = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-            cbman.setPrimaryClip(ClipData.newPlainText("Bugurt",
+            ClipboardManager clipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+            clipboard.setPrimaryClip(ClipData.newPlainText("Bugurt",
                 BugurtHelper.toBugurt(edittext.getText().toString())
             ));
-            Toast toast = Toast.makeText(this, "Скопировано!", 0);
-            toast.show();
+            Toast.makeText(this, getString(R.string.copied), 0)
+                .show();
         } else if (item.getItemId()==MenuItem_CONVERTBUGURT) {
             edittext.setText(
                 BugurtHelper.toBugurt(    

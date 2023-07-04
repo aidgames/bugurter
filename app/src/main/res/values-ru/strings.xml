@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Бугуртер</string>
+
+    <string name="menu_copy_bugurt">Копировать в формате бугурта</string>
+    <string name="menu_convert_bugurt">Конвертировать в бугурта</string>
+    <string name="menu_convert_text">Конвертировать в текст</string>
+
+    <string name="copied">Скопировано!</string>
+</resources>

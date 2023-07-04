@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Bugurter</string>
-    <string name="title_activity_main">Bugurter</string>
+
+    <string name="menu_copy_bugurt">Copy as bugurt</string>
+    <string name="menu_convert_bugurt">Convert to bugurt</string>
+    <string name="menu_convert_text">Convert to text</string>
+
+    <string name="copied">Copied!</string>
 </resources>
