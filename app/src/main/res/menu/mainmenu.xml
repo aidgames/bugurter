@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_copy_bugurt"
+          android:title="@string/menu_copy_bugurt"
+    />
+    <item android:id="@+id/menu_convert_bugurt"
+          android:title="@string/menu_convert_bugurt"
+    />
+    <item android:id="@+id/menu_convert_text"
+          android:title="@string/menu_convert_text"
+    />
+</menu>
