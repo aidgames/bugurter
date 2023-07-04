@@ -1,5 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Bugurter" parent="Theme.AppCompat.DayNight">
-    </style>
+    <style name="Theme.Bugurter" parent="android:style/Theme.Holo.Light" />
 </resources>

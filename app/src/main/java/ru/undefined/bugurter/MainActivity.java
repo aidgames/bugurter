@@ -1,6 +1,6 @@
 package ru.undefined.bugurter;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.ClipboardManager;
@@ -12,7 +12,7 @@ import android.os.Bundle;
 
 import ru.undefined.bugurter.BugurtHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private EditText edittext;
 
