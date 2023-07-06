@@ -5,8 +5,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.ClipboardManager;
 import android.content.ClipData;
+import android.content.SharedPreferences;
 import android.widget.Toast;
 import android.widget.EditText;
+import android.text.TextWatcher;
+import android.text.Editable;
 
 import android.os.Bundle;
 
@@ -15,12 +18,32 @@ import ru.undefined.bugurter.BugurtHelper;
 public class MainActivity extends Activity {
 
     private EditText edittext;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         edittext = (EditText)findViewById(R.id.bugurt_plain);
+        prefs = getSharedPreferences("bugurt", 0);
+        edittext.setText(
+            prefs.getString(getString(R.string.bugurt_plain_key), "")
+        );
+        edittext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString(getString(R.string.bugurt_plain_key), edittext.getText().toString());
+                editor.apply();
+            }
+
+            //unneeded funcs
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
     }
 
     @Override

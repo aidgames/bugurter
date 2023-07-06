@@ -6,4 +6,6 @@
     <string name="menu_convert_text">Convert to text</string>
 
     <string name="copied">Copied!</string>
+
+    <string name="bugurt_plain_key" translatable="false">bugurt_text</string>
 </resources>
